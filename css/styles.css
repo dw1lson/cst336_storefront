@@ -1,0 +1,29 @@
+h1 {
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+    font-size:6rem !important;
+    
+}
+
+h2 {
+    text-align: center;
+}
+
+
+.jumbotron {
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -45%);
+    width: 1200px;
+    height:600px;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 10px 10px 10px #5E6C70;
+    vertical-align: middle;
+}
+
+body {
+    background-color:#90C3D4 !important;
+
+}

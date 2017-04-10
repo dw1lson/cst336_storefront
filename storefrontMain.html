@@ -38,7 +38,7 @@
                         <option value="documetary">Documentary</option>
                         <option value="tv">Television</option>
                     </select>
-                        Availability: <select name="availability" class="selectpicker" data-style="btn-primary">
+                        Availability: <select name="Available" class="selectpicker" data-style="btn-primary">
                         <option value="">-Select-</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
@@ -47,8 +47,8 @@
                     <div class="checkbox">
                         Director: <input type="text" name="Director" placeholder="Search director name..."/>
                         Sort by:
-                            <label><input class="checkbox" type="checkbox" name="sortTitle" value=""> by Title </label>
-                            <label><input class="checkbox" type="checkbox" name="sortLength" value=""> by Length </label>
+                            <label><input class="checkbox" type="radio" name="Sorting" value="Name"> by Title </label>
+                            <label><input class="checkbox" type="radio" name="Sorting" value="Length"> by Length </label>
                     </div>
                     <input type="submit" name="submitform" class="btn btn-primary" value="Submit"/>
                 </form>

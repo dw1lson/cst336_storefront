@@ -24,6 +24,14 @@ h2 {
     vertical-align: middle;
 }
 
+label {
+    padding-bottom: 0px;
+}
+.radioGroup {
+    margin-left:5px;
+    width:130px;
+}
+
 body {
     background-color:#90C3D4 !important;
 

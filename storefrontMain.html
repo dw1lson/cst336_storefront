@@ -20,25 +20,35 @@
         <div class="container">
             <div id="form_jumbotron" class="jumbotron">
                 <h1>CST 336 Storefront: Checkout System</h1>
+                <a href="https://cst336-djw1lson.c9users.io/team_project/cst336_storefront/shoppingCart.html" style="float: right" class="btn btn-info btn-sm">
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                Shopping Cart
+                </a>
                 <br/><hr/><br/>
                 <form style="text-align:center">
-                    Item name: <input type="text" name="item_name" placeholder="Search by name..."/>
-                    Selection label 1: <select name="dropdownSelection1" class="selectpicker" data-style="btn-primary">
-                        <option value="Possibility 1">Possibility 1</option>
-                        <option value="Possibility 2">Possibility 2</option>
-                        <option value="Possibility 3">Possibility 3</option>
-                        <option value="Possibility 4">Possibility 4</option>
-                        <option value="Possibility 5">Possibility 5</option>
+                    Movie Title: <input type="text" name="Title" placeholder="Search movie name..."/>
+                    Genre: <select name="dropdownSelection1" class="selectpicker" data-style="btn-primary">
+                        <option value="">-Select-</option>
+                        <option value="horror">Horror</option>
+                        <option value="action">Action</option>
+                        <option value="scifi">Sci-fi</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="drama">Drama</option>
+                        <option value="documetary">Documentary</option>
+                        <option value="tv">Television</option>
                     </select>
-                        Selection label 2: <select name="dropdownSelection2" class="selectpicker" data-style="btn-primary">
-                        <option value="Possibility 1">Possibility 1</option>
-                        <option value="Possibility 2">Possibility 2</option>
-                        <option value="Possibility 3">Possibility 3</option>
+                        Availability: <select name="availability" class="selectpicker" data-style="btn-primary">
+                        <option value="">-Select-</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
                     </select>
+                    
                     <div class="checkbox">
+                        Director: <input type="text" name="Director" placeholder="Search director name..."/>
                         Sort by:
-                            <label><input class="checkbox" type="checkbox" name="Possibility 1" value=""> Whatever </label>
-                            <label><input class="checkbox" type="checkbox" name="Possibility 2" value=""> Whatever </label>
+                            <label><input class="checkbox" type="checkbox" name="sortTitle" value=""> by Title </label>
+                            <label><input class="checkbox" type="checkbox" name="sortLength" value=""> by Length </label>
                     </div>
                     <input type="submit" name="submitForm" class="btn btn-primary" value="Submit"/>
                 </form>

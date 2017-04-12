@@ -1,11 +1,14 @@
-<?php include 'sqlfunctions.php'; ?>
+<?php
+include 'sqlfunctions.php';
+include 'DBCON.php';
+$dbConn=getDatabaseConnection(Movies);
+?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <style>
             @import url('./css/styles.css');
-            
         </style>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -22,10 +25,10 @@
     <body>
         <div class="container">
             <div id="form_jumbotron" class="jumbotron">
-                <h1>CST 336 MOVIES: Checkout System</h1>
-                <a href="https://cst336-djw1lson.c9users.io/team_project/cst336_storefront/shoppingCart.html" style="float: right" class="btn btn-info btn-sm">
+                <h1>CST 336 Storefront: Checkout System</h1>
+                <a href="shoppingCart.php?id=-1" style="float: right" class="btn btn-info btn-sm">
                 <span class="glyphicon glyphicon-shopping-cart"></span>
-                Shopping Cart
+                Viewing Cart
                 </a>
                 <br/><hr/><br/>
                 <form style="text-align:center">
@@ -56,19 +59,22 @@
                     <input type="submit" name="submitform" class="btn btn-primary" value="Submit"/>
                 </form>
                 <br/><br/>
-                
+            
                 <?php
-        
-                    $movies = getMovies();
-                    foreach($movies as $movie) 
-                    {
                 
-                        echo "Movie Name: " . $movie['Title'] . " " . "Availability: " . $movie['Available']  .  "<br />";
-                    }
-        
-        
+                $results=getMovies();
+                
+                //print_r($results);
+                echo "<table class=\"table table-striped table-hover\" ";
+                foreach($results as $record){
+                printf("<tr><td>%s , %s  \t <a href=\"shoppingCart.php?id=%d\">Add to viewing cart</a></td></tr>",$record['Title'],$record['Year'],$record['MovieId']);
+                }
+                echo "</table>";           
+                
+                
                 ?>
-        </p>
+            
+            
             </div>
         </div>
     </body>

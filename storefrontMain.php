@@ -1,7 +1,7 @@
 <?php
 include 'sqlfunctions.php';
 include 'DBCON.php';
-$dbConn=getDatabaseConnection(Movies);
+$dbConn=getDatabaseConnection(movies);
 ?>
 
 <!DOCTYPE html>

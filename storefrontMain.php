@@ -1,8 +1,11 @@
+<?php include 'sqlfunctions.php'; ?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <style>
             @import url('./css/styles.css');
+            
         </style>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,7 +22,7 @@
     <body>
         <div class="container">
             <div id="form_jumbotron" class="jumbotron">
-                <h1>CST 336 Storefront: Checkout System</h1>
+                <h1>CST 336 MOVIES: Checkout System</h1>
                 <a href="https://cst336-djw1lson.c9users.io/team_project/cst336_storefront/shoppingCart.html" style="float: right" class="btn btn-info btn-sm">
                 <span class="glyphicon glyphicon-shopping-cart"></span>
                 Shopping Cart
@@ -53,7 +56,19 @@
                     <input type="submit" name="submitform" class="btn btn-primary" value="Submit"/>
                 </form>
                 <br/><br/>
-            
+                
+                <?php
+        
+                    $movies = getMovies();
+                    foreach($movies as $movie) 
+                    {
+                
+                        echo $movie['Title'] . " " . $movie['Available']  .  "<br />";
+                    }
+        
+        
+                ?>
+        </p>
             </div>
         </div>
     </body>

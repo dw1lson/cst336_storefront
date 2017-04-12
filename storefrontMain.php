@@ -63,7 +63,7 @@
                     foreach($movies as $movie) 
                     {
                 
-                        echo $movie['Title'] . " " . $movie['Available']  .  "<br />";
+                        echo "Movie Name: " . $movie['Title'] . " " . "Availability: " . $movie['Available']  .  "<br />";
                     }
         
         

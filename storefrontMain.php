@@ -36,11 +36,11 @@ $dbConn=getDatabaseConnection(movies);
                     Movie Title: <input type="text" name="Title" placeholder="Search movie name..."/>
                     Genre: <select name="Genre" class="selectpicker" data-style="btn-primary">
                         <option value="">-Select-</option>
-                        <option value="horror">Horror</option>
-                        <option value="action">Action</option>
-                        <option value="scifi">Sci-fi</option>
-                        <option value="comedy">Comedy</option>
-                        <option value="drama">Drama</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Action">Action</option>
+                        <option value="Science Fiction">Sci-fi</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
                         </select>
                         
                         Availability: <select name="Available" class="selectpicker" data-style="btn-primary">

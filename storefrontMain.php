@@ -63,6 +63,7 @@ $dbConn=getDatabaseConnection(movies);
                 
                 $results=getMovies();
                 
+
                 //print_r($results);
                 echo "<table class=\"table table-striped table-hover\" ";
                 foreach($results as $record){

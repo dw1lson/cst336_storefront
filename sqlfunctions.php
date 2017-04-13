@@ -17,7 +17,6 @@ function getMovies() {
     
     if($_GET['Genre'] != "" && $_GET['Director'] == "") //check if the user wants a specific genre
     {
-        echo "GENRE";
         $sql = "SELECT * FROM Movies join Genres on Movies.GenreId = Genres.Id WHERE Genres.Name = :type ";
         $namedParameters[':type'] = $_GET['Genre'];    
     }
@@ -30,7 +29,6 @@ function getMovies() {
     }
     else if($_GET['Genre'] != "" && $_GET['Director'] != "")
     {
-        echo "get BOTH";
         // echo $_GET['Director'];
         $sql = "SELECT * FROM Movies join Directors on Movies.DirectorId = Directors.Id join Genres on Movies.GenreId = Genres.Id WHERE Directors.FirstName = :type 
             OR Directors.LastName = :type AND Genres.Name = :type2 ";
@@ -44,7 +42,7 @@ function getMovies() {
         $namedParameters[':title'] = '%' . $_GET['Title'] . '%';
     }
     
-    if (isset($_GET['Available']) ) //get only available movies 
+    if ($_GET['Available'] != "") //get only available movies 
     { 
         $sql .= " AND Available = :status "; 
         $namedParameters[':status'] =  $_GET['Available'];    
@@ -53,13 +51,14 @@ function getMovies() {
     
     if($_GET['Sorting'] == "Name") //sort by title
     {
-        $sql .= "ORDER BY Title";
+        $sql .= " ORDER BY Title";
     }
     else if ($_GET['Sorting'] == "Length") //sort by movie length
     {
-        $sql .= "ORDER BY Length";
+        $sql .= " ORDER BY Length";
     }
     //}
+    
 
     echo "</br>";
     $stmt = $dbConn -> prepare ($sql);

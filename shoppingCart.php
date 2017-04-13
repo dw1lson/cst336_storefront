@@ -95,7 +95,7 @@ if(isset($_GET['id']) && $_GET['id']>0)
                 <br/><hr/><br/>
                 <div style="width:50%; text-align: center; margin: auto">
                 <div class="btn-group btn-group-justified">
-                  <a href="storefrontMain.php" class="btn btn-primary">Home</a>
+                  <a href="storefrontMain.php" class="btn btn-primary">Continue Browsing</a>
                   <a href="#" class="btn btn-primary">Checkout</a>
                 </div>
                 <?php

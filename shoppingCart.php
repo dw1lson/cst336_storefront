@@ -2,7 +2,7 @@
 session_start();
 
 include 'DBCON.php';
-$dbConn=getDatabaseConnection(Movies);
+$dbConn=getDatabaseConnection(movies);
 
 if($_GET['id'] ==0)
 {

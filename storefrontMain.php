@@ -1,7 +1,8 @@
 <?php
 include 'sqlfunctions.php';
 include 'DBCON.php';
-$dbConn=getDatabaseConnection(Movies);
+include 'movieInfo.php';
+$dbConn=getDatabaseConnection(movies);
 ?>
 
 <!DOCTYPE html>
@@ -38,12 +39,10 @@ $dbConn=getDatabaseConnection(Movies);
                         <option value="horror">Horror</option>
                         <option value="action">Action</option>
                         <option value="scifi">Sci-fi</option>
-                        <option value="thriller">Thriller</option>
                         <option value="comedy">Comedy</option>
                         <option value="drama">Drama</option>
-                        <option value="documetary">Documentary</option>
-                        <option value="tv">Television</option>
-                    </select>
+                        </select>
+                        
                         Availability: <select name="Available" class="selectpicker" data-style="btn-primary">
                         <option value="">-Select-</option>
                         <option value="yes">Yes</option>
@@ -67,7 +66,9 @@ $dbConn=getDatabaseConnection(Movies);
                 //print_r($results);
                 echo "<table class=\"table table-striped table-hover\" ";
                 foreach($results as $record){
-                printf("<tr><td>%s , %s  \t <a href=\"shoppingCart.php?id=%d\">Add to viewing cart</a></td></tr>",$record['Title'],$record['Year'],$record['MovieId']);
+                 printf("<tr><td><a href='' onclick='window.open(\"movieInfo.php?DirectorId=".$record['DirectorId']."&Title=".$record['Title']."&Length=".$record['Length']."&Year=".$record['Year']."&GenreId=".$record['GenreId']." \", \"userWindow\", \"width=200, height=200\" )'>%s</a>, %s  \t <a href=\"shoppingCart.php?id=%d\">Add to viewing cart</a></td></tr>",$record['Title'],$record['Year'],$record['MovieId']);
+                
+                //printf("<tr><td>%s , %s  \t <a href=\"shoppingCart.php?id=%d\">Add to viewing cart</a></td></tr>",$record['Title'],$record['Year'],$record['MovieId']);
                 }
                 echo "</table>";           
                 
